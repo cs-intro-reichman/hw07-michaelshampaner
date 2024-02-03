@@ -11,6 +11,9 @@ public class SpellChecker {
 	}
 
 	public static String tail(String str) {
+		if (str.length() == 1) {
+			return "";
+		}
 		return str.substring(1);
 	}
 
@@ -23,7 +26,7 @@ public class SpellChecker {
 		if (word2.length() == 0) {
 			return word1.length();
 		}
-		if (lowerCaseWord1.substring(0, 1) == lowerCaseWord2.substring(0, 1)) {
+		if (lowerCaseWord1.charAt(0) == lowerCaseWord2.charAt(0)) {
 			return levenshtein(tail(lowerCaseWord1), tail(lowerCaseWord2));
 		}
 		else{
